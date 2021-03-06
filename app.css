@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+html {
+    font: 700 15px/1 "Montserrat", sans-serif;
+    color: hsl(233, 13%, 49%);
+}
+
+body {
+    position: relative;
+    background-color: hsl(240, 78%, 98%);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem;
+}
+
+#bgTop,
+#bgBottom {
+    position: absolute;
+    z-index: 0;
+    max-width: 50%;
+}
+
+#bgTop {
+    right: 0;
+    top: 0;
+}
+
+#bgBottom {
+    left: 0;
+    bottom: 0;
+}
+
+header,
+main {
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+header>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+    color: hsl(234, 14%, 74%);
+}
+
+#slider {
+    width: 3.5rem;
+    height: 2rem;
+    background: linear-gradient(to right, hsl(236, 81%, 85%), hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    background-size: 200%;
+    background-position: right;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 1.5rem;
+    transition: background-position 0.25s ease;
+}
+
+#slider:hover {
+    cursor: pointer;
+    background-position: left;
+}
+
+#slider div {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+main {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pricingPlan {
+    background-color: #fff;
+    padding: 2rem;
+    flex-grow: 1;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 3rem hsl(236, 72%, 95%);
+}
+
+h2 {
+    color: hsl(233, 13%, 49%);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+h3 {
+    font-size: 3rem;
+    color: hsl(232, 13%, 33%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+h3 span {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+
+li {
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid hsl(234, 14%, 90%);
+}
+
+.pricingPlan li:nth-of-type(3) {
+    border-bottom: 1px solid hsl(234, 14%, 90%);
+    margin-bottom: 2rem;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    font: inherit;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #fff, #fff, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    background-size: 300%;
+    background-position: right;
+    color: #fff;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0);
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    background-position: left;
+    color: hsl(237, 63%, 64%);
+    border-color: hsl(237, 63%, 64%);
+}
+
+.pricingPlan:nth-of-type(1) {
+    padding-right: 3rem;
+}
+
+.pricingPlan:nth-of-type(3) {
+    padding-left: 3rem;
+}
+
+.mostPopular {
+    z-index: 1;
+    padding: 3rem 2rem;
+    margin: 0 -1rem;
+    background: linear-gradient(135deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: #fff;
+}
+
+.mostPopular h2,
+.mostPopular h3 {
+    color: #fff;
+}
+
+.mostPopular button {
+    background: #fff;
+    color: hsl(237, 63%, 64%);
+}
+
+.mostPopular button:hover {
+    background: none;
+    color: #fff;
+    border-color: #fff;
+}
+
+.active {
+    color: hsl(233, 13%, 49%);
+    transition: color 0.25s ease;
+}
+
+.sliderMonthly {
+    margin-left: 1.75rem;
+    transition: margin-left 0.25s ease;
+}
+
+.sliderYearly {
+    margin-left: 0.25rem;
+    transition: margin-left 0.25s ease;
+}
+
+@media (max-width: 1000px) {
+    main {
+        width: 90%;
+        flex-direction: column;
+    }
+    .pricingPlan {
+        width: 100%;
+        margin: 1rem 0;
+    }
+    .pricingPlan:nth-of-type(1) {
+        padding: 3rem;
+    }
+    .pricingPlan:nth-of-type(3) {
+        padding: 3rem;
+    }
+    .mostPopular {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 3rem 1.5rem;
+    }
+    main {
+        width: 100%;
+    }
+}
